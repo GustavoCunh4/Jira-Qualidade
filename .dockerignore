@@ -1,0 +1,32 @@
+.git
+.github
+.vscode
+.idea
+
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Python caches
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Python virtual envs
+**/.venv
+**/venv
+
+# Node build caches
+**/node_modules
+frontend/dist
+
+# Local database
+**/*.db
+
+# Misc
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.DS_Store
