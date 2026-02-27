@@ -9,5 +9,7 @@ test("renders login screen", () => {
       <Login onLogin={() => {}} />
     </MemoryRouter>
   );
-  expect(screen.getByText(/jira quality command center/i)).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /entrar/i })).toBeInTheDocument();
+  expect(screen.getByLabelText(/usuario/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/senha/i)).toBeInTheDocument();
 });
