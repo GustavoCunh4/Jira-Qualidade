@@ -1,10 +1,11 @@
 databases:
   - name: jqcc-postgres
-    plan: starter
+    plan: free
 
 services:
   - type: web
     name: jqcc-backend
+    plan: free
     env: docker
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
@@ -38,7 +39,7 @@ services:
       - key: AUTH_COOKIE_SECURE
         value: "true"
       - key: AUTH_COOKIE_SAMESITE
-        value: none
+        value: lax
       - key: ADMIN_BOOTSTRAP_USER
         value: admin
       - key: ADMIN_BOOTSTRAP_PASSWORD

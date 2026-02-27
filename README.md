@@ -210,6 +210,18 @@ Exemplo:
 - `TRUSTED_HOSTS=seu-backend.onrender.com`
 - `VITE_API_BASE_URL=https://seu-backend.onrender.com/api`
 
+### Modo 100% gratuito no Render
+O `render.yaml` deste projeto ja esta configurado para usar plano `free` no backend e no Postgres.
+
+Limitacoes importantes do free tier:
+- O backend pode entrar em sleep por inatividade (primeira resposta apos idle pode demorar).
+- O Postgres free pode expirar se ficar muito tempo sem uso.
+- O scheduler em processo (`SCHEDULER_ENABLED=true`) nao e ideal para free tier, porque depende do backend estar ativo.
+
+Se quiser reduzir risco no free tier:
+- Defina `SCHEDULER_ENABLED=false` no backend.
+- Mantenha uma rotina de acesso ao app para evitar inatividade longa.
+
 ## Comandos uteis (PowerShell e CMD)
 PowerShell:
 - `scripts\up.ps1`
